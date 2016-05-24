@@ -4,7 +4,7 @@
 ## 설치할 패키지
 1. Django 설치
 ```
-$ pip install django
+$ ./python_packages.sh
 ```
 
 D1 : github + slack
