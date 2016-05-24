@@ -7,10 +7,14 @@ from django.http.response import HttpResponse
 def home(request):
     return HttpResponse("Hello World")
 
+def room(request, room_id):
+    return HttpResponse("This is a room detail")
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     
     url(r'^$', home),
+    url(r'rooms/(?P<room_id>\d+)/$', room),
 
 ]
 
