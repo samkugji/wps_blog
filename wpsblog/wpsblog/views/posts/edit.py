@@ -3,11 +3,11 @@ from django.shortcuts import render
 from wpsblog.models import Post
 
 
-def list(request):
+def edit(request, post_id):
     return render(
         request,
-        "posts/list.html",
+        "posts/edit.html",
         {
-            "posts": Post.objects.public(),
-        },
+            "post": Post.objects.get(id=post_id),
+        }
     )

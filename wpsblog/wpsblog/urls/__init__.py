@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.conf.urls import url, include
+from django.conf.urls.static import static
 from django.contrib import admin
 
 from wpsblog.views import *
@@ -13,10 +15,8 @@ urlpatterns = [
     url(r'^news/$', news, name="news"),
 
     url(r'^policy/', include("wpsblog.urls.policy", namespace="policy")),
-    
-    url(r'^posts/$', list, name="post-list"),
-    url(r'^posts/(?P<post_id>\d+)/$', detail, name="post-detail"),
+    url(r'^posts/', include("wpsblog.urls.posts", namespace="posts")),
+    url(r'^', include("wpsblog.urls.auth", namespace="auth")),
 
-    url(r'^naverposts/$', naver_list, name="naverpost-list"),
-    url(r'^naverposts/(?P<post_id>\d+)/$', naver_detail, name="naverpost-detail"),
-]
+    url(r'^naver/posts/$', naver_posts_list, name="naver-posts-list"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

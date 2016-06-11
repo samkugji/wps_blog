@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
 
-def naver_detail(request):
+def new(request):
     return render(
         request,
-        "naverposts/detail.html",
+        "posts/new.html",
         {},
     )

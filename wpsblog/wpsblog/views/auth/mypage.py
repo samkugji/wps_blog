@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
 
-def naver_list(request):
+def mypage(request):
     return render(
         request,
-        "naverposts/list.html",
+        "auth/mypage.html",
         {},
     )

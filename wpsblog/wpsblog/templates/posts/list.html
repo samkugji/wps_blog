@@ -6,10 +6,13 @@
 
 <ul>
   {% for post in posts %}
-    <a href="{{ post.get_absolute_url }}">
-        <h2>{{ post.title }}</h2>
-    </a>
-    <p>{{ post.content }}</p>
+    <li>
+      <img src="{{ post.get_image_url }}" alt="{{ post.title }}">
+      <a href="{% url "posts:detail" post_id=post.id %}">
+        <h2>{{ post.title }} <span>({{ post.comment_set.count }})</span></h2>
+      </a>
+      <p>{{ post.content }}</p>
+    </li>
   {% endfor %}
 </ul>
 {% endblock %}
