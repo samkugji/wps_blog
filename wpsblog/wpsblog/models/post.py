@@ -12,6 +12,7 @@ class PostManager(models.Manager):
 class Post(models.Model):
 
     objects = PostManager()
+
     user = models.ForeignKey(User)
 
     title = models.CharField(
@@ -33,7 +34,7 @@ class Post(models.Model):
         return reverse(
             "posts:detail",
             kwargs={
-                "post_id": self.id,
+                "pk": self.id,
             }
         )
 

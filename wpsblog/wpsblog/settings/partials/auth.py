@@ -16,5 +16,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Custom Authentication URLs
 LOGIN_URL = "/login/"
