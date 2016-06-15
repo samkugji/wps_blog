@@ -20,4 +20,5 @@ class BitlinkCreateView(View):
         bitlink = request.user.bitlink_set.create(
             original_url=original_url,
         )
-    return redirect(reverse("home"))
+        
+        return redirect(reverse("home"))
