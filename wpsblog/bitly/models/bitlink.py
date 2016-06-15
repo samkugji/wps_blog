@@ -13,11 +13,11 @@ class Bitlink(models.Model):
 
     original_url = models.URLField()
     shorten_hash = models.CharField(
-        max_length = 8,
-        blank = True, 
-        null = True,
+        max_length=8,
+        blank=True,
+        null=True,
     )
-    
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -28,9 +28,10 @@ class Bitlink(models.Model):
         return reverse(
             "bitly:redirect",
             kwargs={
-                "shorten_hash" : self.shorten_hash,
+                "shorten_hash": self.shorten_hash,
             }
         )
+
 
 @receiver(post_save, sender=Bitlink)
 def post_save_bitlink(sender, instance, created, **kwargs):

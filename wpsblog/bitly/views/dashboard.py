@@ -8,7 +8,7 @@ class BitlinkDashboardView(View):
 
     def get(self, request, *args, **kwargs):
         bitlink = Bitlink.objects.get(
-        shorten_hash=kwargs.get("shorten_hash"),
+            shorten_hash=kwargs.get("shorten_hash"),
         )
 
         return render(

@@ -1,0 +1,11 @@
+language: python
+python:
+    - "3.4"
+    - "3.5"
+install:
+    - pip install -r requirements/development.txt
+script:
+    - pep8 wpsblog/
+    - python wpsblog/manage.py test users posts bitly wpsblog -v2
+notifications:
+  slack: dswps:LHf09mOt7Pi8sa1AEzIfbC65

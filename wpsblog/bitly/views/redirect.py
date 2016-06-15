@@ -10,8 +10,8 @@ class BitlinkRedirectView(View):
 
         bitlink = Bitlink.objects.get(
             shorten_hash=kwargs.get("shorten_hash"),
-        ) 
-        
+        )
+
         bitlink_log = bitlink.bitlinklog_set.create(
             http_referer=request.META.get("HTTP_REFERER"),
             http_user_agent=request.META.get("HTTP_USER_AGENT"),
