@@ -1,1 +1,1 @@
-from .user_profile import UserProfile
+default_app_config = "users.apps.UsersAppConfig"

@@ -11,14 +11,14 @@ class BitlinkCreateView(View):
         return render(
             request,
             "bitly/new.html",
-            {},
+            context={},
         )
 
-    def post(self, request, *args, **kwagrs):
+    def post(self, request, *args, **kwargs):
         original_url = request.POST.get("original_url")
 
         bitlink = request.user.bitlink_set.create(
             original_url=original_url,
         )
-        
+
         return redirect(reverse("home"))
