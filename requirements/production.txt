@@ -3,4 +3,5 @@ requests
 beautifulsoup4
 Pillow
 hashids
-dj-database-url
+dj_database_url
+psycopg2
