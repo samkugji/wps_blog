@@ -8,3 +8,5 @@ redis
 flower
 dj_database_url
 psycopg2
+honcho
+gunicorn
