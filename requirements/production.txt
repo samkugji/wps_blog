@@ -3,5 +3,8 @@ requests
 beautifulsoup4
 Pillow
 hashids
+celery[redis]
+redis
+flower
 dj_database_url
 psycopg2
