@@ -1,0 +1,1 @@
+web: python wpsblog/manage.py runserver 8000
